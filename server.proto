@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-package gismeteo;
+package pb;
+
+option go_package = "./;pb";
 
 service GismeteoWeatherGateway {
   rpc GetWeather(Empty) returns (Weather) {}

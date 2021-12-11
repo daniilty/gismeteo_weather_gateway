@@ -18,7 +18,7 @@ def get_env(key)
   env
 end
 
-class GismeteoServer < Gismeteo::GismeteoWeatherGateway::Service
+class GismeteoServer < Pb::GismeteoWeatherGateway::Service
   attr_accessor :info
 
   def initialize
@@ -26,7 +26,7 @@ class GismeteoServer < Gismeteo::GismeteoWeatherGateway::Service
   end
 
   def get_weather(empty, _unused_call)
-    Gismeteo::Weather.new(info: @info.get_weather)
+    Pb::Weather.new(info: @info.get_weather)
   end
 end
 
